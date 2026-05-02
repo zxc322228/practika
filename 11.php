@@ -2,34 +2,23 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Задание 11 - Поиск сотрудников</title>
+    <title>Программирование на языке PHP</title>
 </head>
 <body>
-    <h1>Поиск сотрудников</h1>
+    <h1>Основы программирования</h1>
     <?php
-        require '11/personnels.php';
-        $term = "surname";
-        $value = "Маркова";
-        $found = false;
-        foreach ($content as $item) {
-            if ($item[$term] == $value) {
-                echo "
-                    id: {$item['id_personnel']} <br />
-                    Фамилия: {$item['surname']} <br />
-                    Имя: {$item['name']} <br />
-                    Отчество: {$item['patronymic']} <br />
-                    Должность: {$item['post']} <br />
-                    Категория: {$item['category']} <br />
-                    Образование: {$item['level_edu']} <br />
-                    Стаж работы в ОУ: {$item['experience_total']} <br />
-                    <hr/>
-                ";
-                $found = true;
-            }
-        }
-        if (!$found) {
-            echo "<p>Сотрудник с фамилией '$value' не найден.</p>";
+        $VarStr = 'Слабая типизация PHP';
+        const CONSTSTR = 'Слабая типизация PHP';
+        define("ARRSTR", array('Слабая типизация PHP'));
+        echo "<pre>";
+        $check1 = var_dump($VarStr);
+        $check2 = var_dump(CONSTSTR);
+        $check3 = var_dump(ARRSTR);
+        echo "</pre>";
+        if ($check1 !== false || $check2 !== false || $check3 !== false) {
+            echo "<p><b>Результат проверки:</b> Высказывание <b style='color: green'>ИСТИННО</b></p>";
         }
     ?>
+    
 </body>
 </html>

@@ -2,27 +2,19 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Задание 5 - Альбомы (таблица)</title>
-    <style>
-        table, th, td { border: 5px solid pink; border-collapse: collapse; padding: 8px; }
-    </style>
+    <title>Программирование на языке PHP</title>
 </head>
 <body>
-    <h1>Список альбомов</h1>
+    <h1>Основы программирования</h1>
+    <hr>
     <?php
-        require 'albums.php';
-        echo "<table>";
-        echo "<tr><th>ID</th><th>Альбом</th><th>Дата выпуска</th><th>Страна</th><th>ID группы</th></tr>";
-        for ($i = 0; $i < count($album); $i++) {
-            echo "<tr>";
-            echo "<td>{$album[$i]['id_album']}</td>";
-            echo "<td>{$album[$i]['title']}</td>";
-            echo "<td>{$album[$i]['date']}</td>";
-            echo "<td>{$album[$i]['country']}</td>";
-            echo "<td>{$album[$i]['id_team']}</td>";
-            echo "</tr>";
-        }
-        echo "</table>";
+    $usd = 1000;
+    $usd_to_rub = 75.87;
+    $rub_to_cny = 0.09;
+
+    $rub = $usd * $usd_to_rub;
+    $cny = $rub * $rub_to_cny;
+    echo "<b>$usd долларов = " . round($cny, 2) . " юаней</p>";
     ?>
 </body>
 </html>
