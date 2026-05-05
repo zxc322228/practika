@@ -102,8 +102,11 @@
 				]
 		];
 		
-		// перебираем элементы массива 
 		foreach ($albums as $key => $item) {
+			$label_str = implode(", ", $item["label"]);
+			$format_str = implode(", ", $item["format"]);
+			$status_str = implode(", ", $item["status"]);
+			
 			printf ("
 				Идентификатор: %s<br />
 				Название: %s<br />
@@ -116,14 +119,11 @@
 				$item["id"],
 				$item["album_name"],
 				$item["date"],
-				$item["label"],
-				$item["format"],
-				$item["status"]
+				$label_str,
+				$format_str,
+				$status_str
 			);
 		}
 	?>
-
-
-
 </body>
 </html>

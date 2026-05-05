@@ -11,7 +11,7 @@
         <input type="number" name="a" step="any" placeholder="a" value="<?= $_GET['a'] ?? '' ?>" required>
         <input type="number" name="b" step="any" placeholder="b" value="<?= $_GET['b'] ?? '' ?>" required>
         <input type="number" name="c" step="any" placeholder="c" value="<?= $_GET['c'] ?? '' ?>" required>
-        <button type="submit">Решить</button>
+        <button type="submit">Решить</button>+
     </form>
     
     <?php

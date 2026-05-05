@@ -37,19 +37,25 @@
 		];
 
 		foreach ($albums as $item) {
-		
-			$out .= "
+			
+			$status_array = explode(", ", $item['status']);
+			
+			$status_list = "<ul>";
+			foreach ($status_array as $status_item) {
+				$status_list .= "<li>$status_item</li>";
+			}
+			$status_list .= "</ul>";
+			
+			echo "
 				<h4>{$item['album_name']} (id={$item['id']})</h4>
 				Дата выпуска: {$item['date']} <br />
 				Лейбл: {$item['label']} <br />
 				Формат: {$item['format']} <br />
-				Статус: {$item['status']} <br /><p>
+				Статус: $status_list <p>
 			";
 		}
 		
-		echo $out;
 	?>
-
 
 </body>
 </html>
