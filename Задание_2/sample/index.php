@@ -2,35 +2,45 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Игра в кубики</title>
+    <title>Альбомы групп</title>
+    <style>
+        table, th, td {
+            border: 1px solid #333;
+            border-collapse: collapse;
+            padding: 8px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Игра в кости </h1>
+
+<h2>Список альбомов</h2>
+
+<?php
+require "album.php";
+
+function fnOutAlbum($arr) {
+    $out = "<table>
+            <tr>
+                <th>ID</th>
+                <th>Альбом</th>
+                <th>Дата выпуска</th>
+                <th>Страна</th>
+            </tr>";
     
-    <?php
-        $dice1 = rand(1, 6);
-        $dice2 = rand(1, 6);
-        $dice3 = rand(1, 6);
-        
-        $sum = $dice1 + $dice2 + $dice3;
-    ?>
+    foreach ($arr as $item) {
+        $out .= "<tr>
+                    <td>{$item['id_album']}</td>
+                    <td>{$item['title']}</td>
+                    <td>{$item['date']}</td>
+                    <td>{$item['country']}</td>
+                 </tr>";
+    }
     
-    <div class="dice">
-        <img src="cube/<?= $dice1 ?>.jpg" alt="Кубик <?= $dice1 ?>">
-    </div>
-    <div class="dice">
-        <img src="cube/<?= $dice2 ?>.jpg" alt="Кубик <?= $dice2 ?>">
-    </div>
-    <div class="dice">
-        <img src="cube/<?= $dice3 ?>.jpg" alt="Кубик <?= $dice3 ?>">
-    </div>
-    
-    <div class="result">
-         Сумма очков: <strong><?= $sum ?></strong>
-    </div>
-    <br>
-    <form method="get">
-        <button type="submit"> Бросить кубики</button>
-    </form>
+    $out .= "</table>";
+    return $out;
+}
+echo fnOutAlbum($album);
+?>
+
 </body>
 </html>
