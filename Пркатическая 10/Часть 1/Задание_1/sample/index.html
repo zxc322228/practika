@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Анкета сотрудника</title>
+</head>
+<body>
+    <h1>Анкета сотрудника</h1>
+    <form action="server.php" method="post">
+        Фамилия: <input type="text" name="surname"><p>
+        Имя: <input type="text" name="name"><p>
+        Отчество: <input type="text" name="patronymic"><p>
+        Должность: <input type="text" name="post"><p>
+        Уровень образования: 
+        <select name="education">
+            <option>Высшее (бакалавриат)</option>
+            <option>Высшее (специалитет, магистратура)</option>
+            <option>Подготовка кадров высшей квалификации</option>
+            <option>Среднее профессиональное</option>
+        </select><p>
+        Категория: 
+        Высшая <input type="radio" name="category" value="Высшая">
+        Первая <input type="radio" name="category" value="Первая">
+        Соответствие занимаемой должности <input type="radio" name="category" value="Соответствие"><p>
+        Общий стаж: <input type="number" step="0.1" name="total_exp"><p>
+        Стаж в техникуме: <input type="number" step="0.1" name="college_exp"><p>    
+        <input type="submit">
+    </form>
+</body>
+</html>
